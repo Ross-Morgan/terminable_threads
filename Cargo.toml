@@ -2,7 +2,7 @@
 name = "terminable_threads"
 version = "0.2.0"
 edition = "2021"
-description = "Basic Terminable Thread Managers"
+description = "Basic Terminable Thread Manager"
 license-file = "LICENSE"
 keywords = ["threads", "threading"]
 repository = "https://github.com/Ross-Morgan/terminable_threads"
