@@ -7,7 +7,7 @@ use std::thread::JoinHandle;
 
 /// A basic thread manager that can signal all threads to terminate / finish early
 ///
-/// Note that threads will only terminate if the `Ref<Mutex<AtomicBool>>` flag is used
+/// Note that threads will only terminate if the `Arc<AtomicBool>` flag is used
 #[derive(Debug)]
 pub struct TerminableThreads<T, const N: usize> {
     pub(crate) _threads: [JoinHandle<T>; N],
@@ -57,7 +57,7 @@ impl<T, const N: usize> TerminableThreads<T, N> {
 
 /// Basic builder for a terminable thread object
 ///
-/// The builder is necessary to provide the termination flag (`Arc<Mutex<AtomicBool>>`)
+/// The builder is necessary to provide the termination flag (`Arc<AtomicBool>`)
 /// for threads, that are later provided to the builder, to use.
 #[derive(Debug)]
 pub struct TerminableThreadsBuilder<T, const N: usize> {
